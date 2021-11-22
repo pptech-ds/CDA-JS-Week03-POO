@@ -1,33 +1,34 @@
 class Cars {
+    #price;
+    #weight;
     constructor(price, weight) {
-        this._price = price;
-        this._weight = weight;    
+        if (this.constructor === Cars) {
+            throw new Error('Abstract class cannot be instantiated!')
+        }  
     }
 
     getPrice() {
-        return this._price;
+        return this.#price;
     }
 
     getWeight() {
-        return this._weight;
+        return this.#weight;
     }
 }
 
 
 
 class BMW extends Cars {
-    constructor(price, weight) {
-        this.$_price = price;
-        this.$_weight = weight;    
-    }
+    // #price;
+    // #weight;
 
-    getPrice() {
-        return this.$_price;
-    }
+    // getPrice() {
+    //     return this.$_price;
+    // }
 
-    getWeight() {
-        return this.$_weight;
-    }
+    // getWeight() {
+    //     return this.$_weight;
+    // }
 
     static lessExpensive() {
         return 15000;
@@ -36,23 +37,19 @@ class BMW extends Cars {
 
 
 class Suzuki extends Cars {
-    constructor(price, weight) {
-        this.$_price = price;
-        this.$_weight = weight;    
-    }
-
-    getPrice() {
-        return this.$_price;
-    }
-
-    getWeight() {
-        return this.$_weight;
-    }
+    // #price;
+    // #weight;
 
     static lessExpensive() {
         return 5000;
     }
 }
 
-console.log('BMW', BMW.lessExpensive())
-console.log('Suzuki', Suzuki.lessExpensive())
+console.log('BMW.lessExpensive()', BMW.lessExpensive());
+console.log('Suzuki.lessExpensive()', Suzuki.lessExpensive());
+let bmw = new BMW();
+bmw.price = 20000;
+console.log('bmw.price', bmw.price);
+
+let car = new Cars();
+console.log('car', car); // error thrown
