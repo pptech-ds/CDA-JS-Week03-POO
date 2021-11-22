@@ -1,36 +1,46 @@
 class MyTinyCalculator {
-    constructor(a, b, result) {
-        this.a = a;
-        this.b = b;
-        this.result = result;
+    #a;
+    #b;
+    #result = null;
+    constructor(a, b) {
+        this.#a = a;
+        this.#b = b;
     }
 
     get defineA() {
-        return this.a
+        return this.#a
     }
 
     set defineA(value) {
-        this.a = value
+        this.#a = value
+    }
+
+    get defineB() {
+        return this.#b
+    }
+
+    set defineB(value) {
+        this.#b = value
     }
 
     add() {
-        return this.result = this.a + this.b;
+        return this.#result = this.#a + this.#b;
     }
 
     subtract() {
-        return this.result = this.a - this.b;
+        return this.#result = this.#a - this.#b;
     }
 
     multiply() {
-        return this.result = this.a * this.b;
+        return this.#result = this.#a * this.#b;
     }
 
     divide() {
-        return this.result = this.a / this.b;
+        return this.#result = this.#a / this.#b;
     }
 
     showResult() {
-        return this.result
+        return this.#result
     }
 }
 
