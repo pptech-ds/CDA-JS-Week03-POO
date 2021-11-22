@@ -1,7 +1,7 @@
 class Cars {
     #price;
     #weight;
-    constructor(price, weight) {
+    constructor() {
         if (this.constructor === Cars) {
             throw new Error('Abstract class cannot be instantiated!')
         }  
@@ -19,17 +19,6 @@ class Cars {
 
 
 class BMW extends Cars {
-    // #price;
-    // #weight;
-
-    // getPrice() {
-    //     return this.$_price;
-    // }
-
-    // getWeight() {
-    //     return this.$_weight;
-    // }
-
     static lessExpensive() {
         return 15000;
     }
@@ -37,9 +26,6 @@ class BMW extends Cars {
 
 
 class Suzuki extends Cars {
-    // #price;
-    // #weight;
-
     static lessExpensive() {
         return 5000;
     }
